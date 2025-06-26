@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const systems = [
   { name: '전자전표', icon: 'https://lh3.googleusercontent.com/vTJcfynkAEr1z0T_mwvUBdDdxsCwmxqi8l8OsdrBf0hAD_t1YQZrtETVH_aaC-baKMKos7oQmZgZndE9I8ufIkXIHw' },
@@ -19,18 +19,55 @@ const systems = [
   { name: 'Cloud', icon: 'https://lh3.googleusercontent.com/-WA0QQksh_Bx3vkkjD_wbBwOgBltw8LxzFx5I0VvDkMlG-g5QYFWjXNw22z4S4xs9rkhM4AkkDke_ECFclnE4Y1Thr5ZTmGcB5oB_FOO' },
 ];
 
+const SYSTEMS_PER_PAGE = 6;
+
 function SystemBox() {
+  const [page, setPage] = useState(0);
+  const maxPage = Math.ceil(systems.length / SYSTEMS_PER_PAGE) - 1;
+  const startIdx = page * SYSTEMS_PER_PAGE;
+  const visibleSystems = systems.slice(startIdx, startIdx + SYSTEMS_PER_PAGE);
+
   return (
-    <div style={{ background: '#fff', borderRadius: 8, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', padding: 24, marginBottom: 24 }}>
-      <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 16 }}>우리 회사 시스템</div>
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-        {systems.map((sys, idx) => (
-          <div key={idx} style={{ width: 64, textAlign: 'center', marginBottom: 16 }}>
-            <img src={sys.icon} alt={sys.name} style={{ width: 40, height: 40, borderRadius: 8, background: '#f5f5f5' }} />
-            <div style={{ fontSize: 12, marginTop: 4 }}>{sys.name}</div>
+    <div className="system-box" style={{ background: '#fff', borderRadius: 8, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', padding: 24, marginBottom: 24, position: 'relative' }}>
+      <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 16, textAlign: 'left' }}>우리 회사 시스템</div>
+      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'flex-start', minHeight: 120 }}>
+        {visibleSystems.map((sys, idx) => (
+          <div key={idx} style={{ width: 80, textAlign: 'center', marginBottom: 16 }}>
+            <img src={sys.icon} alt={sys.name} style={{ width: 48, height: 48, borderRadius: 8, background: '#f5f5f5', boxShadow: '0 1px 4px rgba(0,0,0,0.07)' }} />
+            <div style={{ fontSize: 13, marginTop: 8, color: '#222', fontWeight: 500 }}>{sys.name}</div>
           </div>
         ))}
       </div>
+      <button
+        onClick={() => setPage(page - 1)}
+        disabled={page === 0}
+        style={{
+          position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)',
+          background: '#f5f5f5', border: 'none', borderRadius: '50%', width: 32, height: 32, fontSize: 20, cursor: page === 0 ? 'not-allowed' : 'pointer', boxShadow: '0 1px 4px rgba(0,0,0,0.07)', color: '#888', zIndex: 1
+        }}
+        aria-label="이전"
+      >
+        {'<'}
+      </button>
+      <button
+        onClick={() => setPage(page + 1)}
+        disabled={page === maxPage}
+        style={{
+          position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)',
+          background: '#f5f5f5', border: 'none', borderRadius: '50%', width: 32, height: 32, fontSize: 20, cursor: page === maxPage ? 'not-allowed' : 'pointer', boxShadow: '0 1px 4px rgba(0,0,0,0.07)', color: '#888', zIndex: 1
+        }}
+        aria-label="다음"
+      >
+        {'>'}
+      </button>
+      <div style={{ textAlign: 'center', marginTop: 8 }}>
+        <span style={{ fontSize: 12, color: '#888' }}>{page + 1} / {maxPage + 1}</span>
+      </div>
+      <style>{`
+        .system-box button:disabled {
+          opacity: 0.4;
+        }
+      `}</style>
     </div>
   );
 }
