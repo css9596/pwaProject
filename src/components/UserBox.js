@@ -2,23 +2,33 @@ import React from 'react';
 
 function UserBox() {
   return (
-    <div style={{ background: '#fff', borderRadius: 8, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', padding: 24, marginBottom: 24 }}>
-      <div style={{ color: '#888', fontSize: 14, marginBottom: 8 }}>2025.06.26 THU <span id="js_clock">12:34:56</span></div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div style={{ marginRight: 16 }}>
-          <img src="" alt="photo" style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', border: '2px solid #e5e5e5' }} />
-        </div>
-        <div>
-          <div style={{ fontWeight: 700, fontSize: 18 }}>최성식</div>
-          <div style={{ color: '#666', fontSize: 15 }}>프로</div>
-          <div style={{ color: '#666', fontSize: 15 }}>채널계서비스파트</div>
-        </div>
+    <div className="box_user">
+      <div className="date_info">
+        2025.06.26 THU <span id="js_clock">12:34:56</span>
       </div>
-      <div style={{ marginTop: 16 }}>
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', gap: 16 }}>
-          <li><a href="#">메일 <strong style={{ color: '#f37315' }}>0</strong></a></li>
-          <li><a href="#">전자결재 <strong style={{ color: '#f37315' }}>0</strong></a></li>
-        </ul>
+      <div className="user_info">
+        {/* 출퇴근 버튼 등 우상단 영역 필요시 여기에 추가 */}
+        <div className="photo_area clearfix">
+          <div className="photo_circle_section">
+            <div className="photo_circle_area">
+              <img src="" alt="photo" style={{ width: '95px', height: '95px', objectFit: 'cover' }} />
+            </div>
+            {/* 사진변경 버튼: <a href="#" className="edit_circle">사진변경</a> */}
+          </div>
+          <div className="user_txt">
+            <div className="user_txt_area">
+              <div className="user_name">최성식</div>
+              <div className="user_position">프로</div>
+              <div className="user_position">채널계서비스파트</div>
+            </div>
+          </div>
+        </div>
+        <div className="link_area">
+          <ul>
+            <li><a href="#">메일 <strong>0</strong></a></li>
+            <li><a href="#">전자결재 <strong>0</strong></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   );

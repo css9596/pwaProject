@@ -28,46 +28,35 @@ function SystemBox() {
   const visibleSystems = systems.slice(startIdx, startIdx + SYSTEMS_PER_PAGE);
 
   return (
-    <div className="system-box" style={{ background: '#fff', borderRadius: 8, boxShadow: '0 1px 4px rgba(0,0,0,0.04)', padding: 24, marginBottom: 24, position: 'relative' }}>
-      <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 16, textAlign: 'left' }}>우리 회사 시스템</div>
-      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'flex-start', minHeight: 120 }}>
-        {visibleSystems.map((sys, idx) => (
-          <div key={idx} style={{ width: 80, textAlign: 'center', marginBottom: 16 }}>
-            <img src={sys.icon} alt={sys.name} style={{ width: 48, height: 48, borderRadius: 8, background: '#f5f5f5', boxShadow: '0 1px 4px rgba(0,0,0,0.07)' }} />
-            <div style={{ fontSize: 13, marginTop: 8, color: '#222', fontWeight: 500 }}>{sys.name}</div>
-          </div>
-        ))}
+    <div className="box_system">
+      <div className="title_top">
+        우리 회사 시스템
+        <span className="paging_num">
+          <strong>{page + 1}</strong> / {maxPage + 1}
+        </span>
+        <ul className="util_btn">
+          <li>
+            <button className="btn_prev" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="이전" />
+          </li>
+          <li>
+            <button className="btn_next" onClick={() => setPage(page + 1)} disabled={page === maxPage} aria-label="다음" />
+          </li>
+        </ul>
       </div>
-      <button
-        onClick={() => setPage(page - 1)}
-        disabled={page === 0}
-        style={{
-          position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)',
-          background: '#f5f5f5', border: 'none', borderRadius: '50%', width: 32, height: 32, fontSize: 20, cursor: page === 0 ? 'not-allowed' : 'pointer', boxShadow: '0 1px 4px rgba(0,0,0,0.07)', color: '#888', zIndex: 1
-        }}
-        aria-label="이전"
-      >
-        {'<'}
-      </button>
-      <button
-        onClick={() => setPage(page + 1)}
-        disabled={page === maxPage}
-        style={{
-          position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)',
-          background: '#f5f5f5', border: 'none', borderRadius: '50%', width: 32, height: 32, fontSize: 20, cursor: page === maxPage ? 'not-allowed' : 'pointer', boxShadow: '0 1px 4px rgba(0,0,0,0.07)', color: '#888', zIndex: 1
-        }}
-        aria-label="다음"
-      >
-        {'>'}
-      </button>
-      <div style={{ textAlign: 'center', marginTop: 8 }}>
-        <span style={{ fontSize: 12, color: '#888' }}>{page + 1} / {maxPage + 1}</span>
+      <div className="swiper-container">
+        <div className="swiper-slide">
+          <ul>
+            {visibleSystems.map((sys, idx) => (
+              <li key={idx}>
+                <span>
+                  <img src={sys.icon} alt={sys.name} style={{ width: 48, height: 48, borderRadius: 8, background: '#f5f5f5' }} />
+                  <div className="sys_title">{sys.name}</div>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <style>{`
-        .system-box button:disabled {
-          opacity: 0.4;
-        }
-      `}</style>
     </div>
   );
 }
