@@ -10,7 +10,7 @@ function CalendarBox() {
           <li><a href="#"><span className="txt_date">2025-06-27</span> <span className="txt_title">14:00 ~ 15:00 : 프로젝트 리뷰</span></a></li>
           <li><a href="#"><span className="txt_date">2025-06-28</span> <span className="txt_title">09:00 ~ 09:30 : 아침 업무 점검</span></a></li>
           <li><a href="#"><span className="txt_date">2025-06-29</span> <span className="txt_title">13:00 ~ 14:00 : 외부 미팅</span></a></li>
-          <li style={{ color: '#bbb', fontSize: 13, marginTop: 8 }}>
+          <li className="calendar_notice">
             ※ 실제 연동/슬라이드는 추후 구현
           </li>
         </ul>

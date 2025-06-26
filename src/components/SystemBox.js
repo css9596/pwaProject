@@ -29,9 +29,9 @@ function SystemBox() {
 
   return (
     <div className="box_system">
-      <div className="title_top" style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
-        <span style={{ flex: 1 }}>우리 회사 시스템</span>
-        <ul className="util_btn" style={{ position: 'static', display: 'inline-flex', marginLeft: 8 }}>
+      <div className="title_top">
+        <span className="title">우리 회사 시스템</span>
+        <ul className="util_btn">
           <li>
             <button className="btn_prev" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="이전" />
           </li>
@@ -39,19 +39,20 @@ function SystemBox() {
             <button className="btn_next" onClick={() => setPage(page + 1)} disabled={page === maxPage} aria-label="다음" />
           </li>
         </ul>
-        <span className="paging_num" style={{ marginLeft: 12 }}>
+        <span className="paging_num">
           <strong>{page + 1}</strong> / {maxPage + 1}
         </span>
       </div>
       <div className="swiper-container">
         <div className="swiper-slide">
-          <ul>
+          <ul className="system_list">
             {visibleSystems.map((sys, idx) => (
-              <li key={idx}>
-                <span>
-                  <img src={sys.icon} alt={sys.name} style={{ width: 48, height: 48, borderRadius: 8, background: '#f5f5f5' }} />
-                  <div className="sys_title">{sys.name}</div>
+              <li key={idx} className="system_item">
+                <span className="system_icon_area">
+                  <img src={sys.icon} alt={sys.name} className="system_icon" />
+                  {/* badge, 알림 등 동적 영역 필요시 여기에 */}
                 </span>
+                <div className="sys_title">{sys.name}</div>
               </li>
             ))}
           </ul>

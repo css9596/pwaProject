@@ -10,7 +10,7 @@ function BoardBox() {
           <li><span className="txt_title">2025-06-25 : 7월 휴가 신청 안내</span></li>
           <li><span className="txt_title">2025-06-24 : 사내 보안 교육 일정</span></li>
           <li><span className="txt_title">2025-06-23 : 신규 입사자 환영</span></li>
-          <li style={{ color: '#bbb', fontSize: 13, marginTop: 8 }}>
+          <li className="board_notice">
             ※ 실제 연동/탭/슬라이드는 추후 구현
           </li>
         </ul>
