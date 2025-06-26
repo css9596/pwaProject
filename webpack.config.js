@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -30,6 +31,12 @@ module.exports = {
     port: 3000,
     historyApiFallback: true,
   },
-  plugins: [],
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public', to: '.' }
+      ]
+    })
+  ],
   mode: 'development',
 };
