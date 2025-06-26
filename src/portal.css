@@ -1,0 +1,79 @@
+/* DB Inc. 포털 스타일 주요 예시 (실제 포털 CSS에서 추출/정제 필요) */
+
+body {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif;
+  background: #f5f6fa;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.header, .head {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.logo img { height: 40px; }
+.gnb_list { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+.gnb_list li a { color: #222; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 4px; }
+.gnb_list li a.on { background: #f17b18; color: #fff; }
+.util_list { display: flex; gap: 12px; list-style: none; margin: 0; padding: 0; }
+
+.box_user, .box_system, .box_calendarSchedule, .box_board, .box_search, .box_widget {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+  padding: 20px;
+}
+
+.title_top { font-size: 18px; font-weight: bold; margin-bottom: 16px; display: flex; align-items: center; }
+.paging_num { margin-left: 12px; font-size: 14px; color: #888; }
+.util_btn { display: flex; gap: 4px; list-style: none; margin: 0 0 0 8px; padding: 0; }
+.btn_prev, .btn_next { width: 28px; height: 28px; border: none; background: #eee; border-radius: 50%; cursor: pointer; }
+.btn_prev:disabled, .btn_next:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.box_user .date_info { font-size: 15px; color: #888; margin-bottom: 8px; }
+.btn_clock { position: absolute; right: 16px; top: 16px; }
+.btn_attend { background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 20px; padding: 6px 18px; color: #7f7c65; font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.2s; }
+.btn_attend.on { background: #f17b18; color: #fff; border-color: #f17b18; }
+
+.photo_area { display: flex; align-items: center; gap: 16px; }
+.photo_circle_area img { width: 95px; height: 95px; border-radius: 50%; border: 2px solid #e5e5e5; }
+.edit_circle { display: inline-block; margin-top: 8px; font-size: 12px; color: #888; text-decoration: underline; cursor: pointer; }
+.user_txt_area { margin-left: 8px; }
+.user_name { font-size: 18px; font-weight: bold; margin: 0; }
+.user_position { font-size: 14px; color: #888; margin: 0; }
+
+.link_area ul { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
+.link_area a { color: #222; text-decoration: none; font-size: 14px; }
+.link_area strong { color: #f17b18; margin-left: 4px; }
+.approval_area { display: flex; gap: 4px; align-items: center; }
+.approval_link { color: #222; text-decoration: none; font-size: 14px; }
+
+.box_system .system_list { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+.system_item { text-align: center; width: 90px; }
+.system_icon { width: 48px; height: 48px; border-radius: 8px; background: #f5f5f5; }
+.sys_title { margin-top: 8px; font-size: 13px; color: #333; }
+
+.box_calendarSchedule .calendar_list ul, .box_board .board_list ul { list-style: none; margin: 0; padding: 0; }
+.txt_date { color: #f17b18; font-weight: bold; margin-right: 8px; }
+.txt_title { color: #222; }
+.calendar_notice, .board_notice { color: #bbb; font-size: 13px; margin-top: 8px; }
+
+.box_search { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+.styled_select { position: relative; }
+.select_company { padding: 4px 24px 4px 8px; border-radius: 4px; border: 1px solid #e5e5e5; background: #fff; }
+.search_input { border: 1px solid #e5e5e5; border-radius: 4px; padding: 6px 12px; font-size: 14px; }
+.btn_search { background: #f17b18; color: #fff; border: none; border-radius: 4px; padding: 6px 18px; font-size: 14px; cursor: pointer; }
+
+.box_widget .widget_content { text-align: center; }
+.widget_banner { width: 90%; border-radius: 8px; margin-bottom: 12px; }
+
+footer { background: #fff; border-top: 1px solid #e5e5e5; padding: 16px 0; text-align: center; }
+.txt_copyright { color: #888; font-size: 13px; }
+.site_link { padding-left: 10px; font-weight: bold; }
+
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
