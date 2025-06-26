@@ -29,12 +29,9 @@ function SystemBox() {
 
   return (
     <div className="box_system">
-      <div className="title_top">
-        우리 회사 시스템
-        <span className="paging_num">
-          <strong>{page + 1}</strong> / {maxPage + 1}
-        </span>
-        <ul className="util_btn">
+      <div className="title_top" style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+        <span style={{ flex: 1 }}>우리 회사 시스템</span>
+        <ul className="util_btn" style={{ position: 'static', display: 'inline-flex', marginLeft: 8 }}>
           <li>
             <button className="btn_prev" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="이전" />
           </li>
@@ -42,6 +39,9 @@ function SystemBox() {
             <button className="btn_next" onClick={() => setPage(page + 1)} disabled={page === maxPage} aria-label="다음" />
           </li>
         </ul>
+        <span className="paging_num" style={{ marginLeft: 12 }}>
+          <strong>{page + 1}</strong> / {maxPage + 1}
+        </span>
       </div>
       <div className="swiper-container">
         <div className="swiper-slide">
