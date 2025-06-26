@@ -4,7 +4,7 @@ import ExampleComponent from './components/ExampleComponent';
 function App() {
     return (
         <div className="App">
-            <h1>Welcome to the PWA Project</h1>
+            <h1>안녕! 클레오파트라!</h1>
             <ExampleComponent />
         </div>
     );
