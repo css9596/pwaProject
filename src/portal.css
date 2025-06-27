@@ -22,7 +22,7 @@ body {
 .util_list { display: flex; gap: 12px; list-style: none; margin: 0; padding: 0; }
 
 .util ul li.btn_help a {
-  background: url(/images/cloudporte/icon_help.png) no-repeat 0 0;
+  background: url(./images/cloudporte/icon_help.png) no-repeat 0 0;
   margin-right: 11px;
   background-size: 30px;
   width: 30px;
@@ -31,7 +31,7 @@ body {
   text-indent: -5000px;
 }
 .util ul li.btn_logout a {
-  background: url(/images/cloudporte/icon_log.png) no-repeat 0 0;
+  background: url(./images/cloudporte/icon_log.png) no-repeat 0 0;
   background-size: 30px;
   width: 30px;
   height: 30px;
