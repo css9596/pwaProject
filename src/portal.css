@@ -22,23 +22,27 @@ body {
 .util_list { display: flex; gap: 12px; list-style: none; margin: 0; padding: 0; }
 
 .util ul li.btn_help a {
-  background: url(./images/cloudporte/icon_help.png) no-repeat 0 0;
-  margin-right: 11px;
-  background-size: 30px;
-  width: 30px;
-  height: 30px;
   display: inline-block;
+  width: 30px !important;
+  height: 30px !important;
+  background: url(./images/cloudporte/icon_help.png) no-repeat center center !important;
+  background-size: 30px 30px !important;
+  margin-right: 11px;
   text-indent: -5000px;
+  vertical-align: middle;
 }
 .util ul li.btn_logout a {
-  background: url(./images/cloudporte/icon_log.png) no-repeat 0 0;
-  background-size: 30px;
-  width: 30px;
-  height: 30px;
   display: inline-block;
+  width: 30px !important;
+  height: 30px !important;
+  background: url(./images/cloudporte/icon_log.png) no-repeat center center !important;
+  background-size: 30px 30px !important;
   text-indent: -5000px;
+  vertical-align: middle;
 }
-.util ul li.btn_logout a.on { background-position: 0 -30px; }
+.util ul li.btn_logout a.on {
+  background-position: 0 -30px !important;
+}
 
 .log_out {
   width: 295px;
