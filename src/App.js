@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import 'swiper/swiper-bundle.min.css';
+import 'swiper/css';
 import $ from 'jquery';
 import './portal.css';
 import './style.css';
