@@ -77,3 +77,54 @@ footer { background: #fff; border-top: 1px solid #e5e5e5; padding: 16px 0; text-
 .site_link { padding-left: 10px; font-weight: bold; }
 
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* Swiper, Messi, jQuery-confirm, Bootstrap 등 외부 CSS 파일은 실제 파일이 없으므로, 인라인 스타일과 HTML 내 <style> 태그의 내용을 우선 반영합니다. */
+
+.widgetPopupBox {
+  background: #fff;
+  border: 1px solid #8c8c8c;
+  position: absolute;
+  left: 400px;
+  top: 400px;
+  z-index: 200;
+  -webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3);
+}
+
+.myAltRowClass { background-color:#D6F8FE; background-image:none; }
+div.backLayer {
+  display:none;
+  background-color:black; 
+  position:absolute;
+  left:0px;
+  top:0px;
+  z-index:100;
+}
+div#loadingDiv{
+  display: none;
+  position: absolute;
+  width:50px;
+  height:50px;
+  z-index:101;
+}
+.check-group label {
+  position: relative;
+  color: #858585;
+  padding: 5px 35px;
+  border: solid 1px #d5d5d5;
+  background: #fff;
+}
+.check-group input[type="radio"] {
+  position : absolute;
+}
+.check-group input:checked+label {
+  position: relative;
+  color: #f37315;
+  background: #fff;
+  border: solid 1px #f37315;
+}
+
+/* popup */
+.popup { display: inline-block; }
+
+/* 기타 필요한 스타일은 원본 CSS 파일 확보 시 추가 반영 필요 */

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import 'swiper/swiper-bundle.min.css';
+import $ from 'jquery';
 import './portal.css';
 import './style.css';
 import Header from './components/Header';
