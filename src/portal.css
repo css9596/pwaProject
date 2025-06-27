@@ -9,17 +9,76 @@ body {
 }
 
 .header, .head {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
-  height: 60px;
-  display: flex;
-  align-items: center;
+  background: #43bdae !important;
+  height: 50px;
+  width: 100%;
+  border-bottom: none;
+  display: block;
 }
 .logo img { height: 40px; }
 .gnb_list { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
-.gnb_list li a { color: #222; text-decoration: none; font-weight: 500; padding: 8px 12px; border-radius: 4px; }
-.gnb_list li a.on { background: #f17b18; color: #fff; }
+.gnb_list li a { color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; height: 50px; line-height: 50px; padding: 0 22px; box-sizing: border-box; border-bottom: 0 solid #b5e8e8; transition: border-bottom ease-out 0.2s; }
+.gnb_list li a.on { border-bottom: 6px solid #b5e8e8; }
 .util_list { display: flex; gap: 12px; list-style: none; margin: 0; padding: 0; }
+
+.util ul li.btn_help a {
+  background: url(/images/cloudporte/icon_help.png) no-repeat 0 0;
+  margin-right: 11px;
+  background-size: 30px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-indent: -5000px;
+}
+.util ul li.btn_logout a {
+  background: url(/images/cloudporte/icon_log.png) no-repeat 0 0;
+  background-size: 30px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-indent: -5000px;
+}
+.util ul li.btn_logout a.on { background-position: 0 -30px; }
+
+.log_out {
+  width: 295px;
+  background: #fff;
+  border: 1px solid #8c8c8c;
+  position: absolute;
+  right: 0;
+  top: 52px;
+  z-index: 200;
+  -webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3);
+  display: none;
+}
+.log_list {
+  max-height: 295px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.log_list ul li a {
+  display: block;
+  font-size: 13px;
+  color: #434343;
+  border-bottom: 1px solid #d3d3d3;
+  padding: 14px 10px;
+}
+.log_list ul li:last-child a { border-bottom: none; }
+.log_list ul li .log_email { color: #929292; padding-top: 4px; }
+.log_out .bt_logout {
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  color: #fff;
+  font-size: 12px;
+  background: #8c8c8c;
+  width: 100%;
+  text-align: center;
+  transition: all ease-out 0.5s;
+}
+.log_out .bt_logout:hover { background: #f17b18; }
+.log_list ul li a:hover, .log_list ul li a:hover .log_email { color: #eb6a01; }
 
 .box_user, .box_system, .box_calendarSchedule, .box_board, .box_search, .box_widget {
   background: #fff;

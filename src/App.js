@@ -22,20 +22,20 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="contents">
-        <div className="layout_1">
+      <section className="contents">
+        <article className="layout_1">
           <UserBox />
           <SystemBox />
-        </div>
-        <div className="layout_2">
+        </article>
+        <article className="layout_2">
           <CalendarBox />
           <BoardBox />
-        </div>
-        <div className="layout_3">
+        </article>
+        <article className="layout_3">
           <SearchBox />
           <WidgetBox />
-        </div>
-      </div>
+        </article>
+      </section>
       <Footer />
     </div>
   );
