@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './portal.css';
 import './style.css';
 import Header from './components/Header';
@@ -11,19 +11,25 @@ import WidgetBox from './components/WidgetBox';
 import Footer from './components/Footer';
 
 function App() {
+  // body에 스킨 클래스 적용 (예: skin-6 = 오렌지)
+  useEffect(() => {
+    document.body.classList.add('skin-6');
+    return () => document.body.classList.remove('skin-6');
+  }, []);
+
   return (
-    <div className="App" style={{ background: '#f5f6fa', minHeight: '100vh' }}>
+    <div className="App">
       <Header />
-      <div style={{ display: 'flex', maxWidth: 1400, margin: '0 auto', padding: 24 }}>
-        <div style={{ flex: '0 0 320px', marginRight: 24 }}>
+      <div className="contents">
+        <div className="layout_1">
           <UserBox />
           <SystemBox />
         </div>
-        <div style={{ flex: 1 }}>
+        <div className="layout_2">
           <CalendarBox />
           <BoardBox />
         </div>
-        <div style={{ flex: '0 0 320px', marginLeft: 24 }}>
+        <div className="layout_3">
           <SearchBox />
           <WidgetBox />
         </div>
