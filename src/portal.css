@@ -125,15 +125,10 @@ body {
 .log_list ul li a:hover, .log_list ul li a:hover .log_email { color: #eb6a01; }
 
 .contents {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
-  width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 0;
-  min-height: 600px;
-  box-sizing: border-box;
+  margin: 24px auto 0 auto;
+  padding: 0 24px 32px 24px;
+  gap: 24px;
 }
 .layout_1, .layout_2, .layout_3 {
   display: flex;
@@ -158,23 +153,14 @@ body {
   max-width: 340px;
 }
 .box_user, .box_system, .box_calendarSchedule, .box_board, .box_search, .box_widget {
-  background: #f5f6fa;
-  border-radius: 0;
-  box-shadow: none;
-  margin-bottom: 12px;
-  padding: 0;
-  border: 1px solid #e5e5e5;
-}
-.box_user {
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
   background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   border: 1px solid #e5e5e5;
+  margin-bottom: 0;
   padding: 18px 18px 12px 18px;
-  margin-bottom: 12px;
 }
+.box_user { min-height: 120px; display: flex; align-items: center; gap: 12px; }
 .box_system {
   background: #fff;
   border: 1px solid #e5e5e5;
@@ -228,13 +214,10 @@ body {
 }
 .board_table th, .board_table td {
   padding: 8px 6px;
-  border-bottom: 1px solid #e5e5e5;
-  text-align: left;
 }
 .board_table th {
   background: #f5f6fa;
   color: #888;
-  font-weight: 600;
 }
 .board_table tr:hover td {
   background: #f5f6fa;
@@ -440,7 +423,55 @@ div#loadingDiv{
   margin-right: 8px;
 }
 
-/* 리스트/테이블/페이징 */
+/* 리스트/테이블/ul,li 기본값 리셋 및 스타일 */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #222;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: none;
+}
+th, td {
+  font-size: 14px;
+  color: #222;
+  padding: 8px 6px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+th {
+  background: #f5f6fa;
+  color: #888;
+  font-weight: 600;
+}
+tr:hover td {
+  background: #f5f6fa;
+  color: #43bdae;
+}
+.system_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.system_list li {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.system_list img {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+}
 .board_list ul, .calendar_list ul {
   list-style: none;
   margin: 0;
