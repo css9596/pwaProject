@@ -169,9 +169,7 @@ body {
   padding: 22px 20px 20px 20px;
 }
 .box_calendarSchedule {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 22px 20px 20px 20px;
+  min-height: 180px;
 }
 .box_board {
   background: #fff;
@@ -179,9 +177,25 @@ body {
   padding: 22px 20px 20px 20px;
 }
 .box_search {
-  background: #fff;
-  border: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 22px 20px 20px 20px;
+}
+.search_select, .search_input, .btn_search {
+  height: 36px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+.search_select {
+  min-width: 120px;
+}
+.search_input {
+  min-width: 180px;
+}
+.btn_search {
+  min-width: 100px;
+  padding: 0 18px;
 }
 .box_widget {
   background: #fff;
@@ -404,25 +418,29 @@ div#loadingDiv{
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 .search_select, .select_company {
-  height: 32px;
+  height: 36px;
+  min-width: 110px;
+  max-width: 140px;
   border: 1px solid #e5e5e5;
   border-radius: 6px;
   padding: 0 10px;
   font-size: 15px;
   background: #fff;
   color: #222;
+  box-sizing: border-box;
 }
 .search_input {
-  width: 140px;
-  height: 32px;
+  width: 160px;
+  height: 36px;
   border: 1px solid #e5e5e5;
   border-radius: 6px;
   padding: 0 10px;
   font-size: 15px;
   margin-right: 8px;
+  box-sizing: border-box;
 }
 
 /* 리스트/테이블/ul,li 기본값 리셋 및 스타일 */
@@ -462,17 +480,24 @@ tr:hover td {
   display: flex;
   flex-wrap: wrap;
   gap: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 260px;
+  margin-bottom: 12px;
 }
 .system_list li {
   width: 50%;
   display: flex;
   align-items: center;
   margin-bottom: 12px;
+  box-sizing: border-box;
 }
-.system_list img {
-  width: 48px;
-  height: 48px;
-  margin-right: 12px;
+.system_pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
 }
 .board_list ul, .calendar_list ul {
   list-style: none;
