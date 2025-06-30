@@ -125,6 +125,8 @@ body {
 .log_list ul li a:hover, .log_list ul li a:hover .log_email { color: #eb6a01; }
 
 .contents {
+  display: flex;
+  flex-direction: row;
   max-width: 1400px;
   margin: 24px auto 0 auto;
   padding: 0 24px 32px 24px;
