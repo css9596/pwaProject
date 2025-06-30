@@ -3,40 +3,42 @@ import React from 'react';
 function BoardBox() {
   return (
     <div className="box_board">
-      <div className="tab_top">
-        <span className="btn_left boardBtn swiper-button-disabled"></span>
-        <span className="btn_right boardBtn swiper-button-disabled"></span>
-        <span className="btn_more"></span>
-        <div className="swiper-container swiper-container-horizontal" id="board_swiper">
-          <div id="BOARD_PORTLET" className="swiper-wrapper">
-            <div className="swiper-slide swiper-slide-active" style={{width: '80.1667px'}}>
-              <span id="tab0" className="on">통합</span>
-            </div>
-            <div className="swiper-slide swiper-slide-next" style={{width: '80.1667px'}}>
-              <span id="tab1">전사공지</span>
-            </div>
-            <div className="swiper-slide" style={{width: '80.1667px'}}>
-              <span id="tab2">IT</span>
-            </div>
-            <div className="swiper-slide" style={{width: '80.1667px'}}>
-              <span id="tab3">DX라운지</span>
-            </div>
-            <div className="swiper-slide" style={{width: '80.1667px'}}>
-              <span id="tab4">성장</span>
-            </div>
-            <div className="swiper-slide" style={{width: '80.1667px'}}>
-              <span id="tab5">사우동정</span>
-            </div>
-          </div>
-        </div>
+      <div className="board_tabs">
+        <button className="tab active">통합</button>
+        <button className="tab">전사공지</button>
+        <button className="tab">IT</button>
+        <button className="tab">DX라운지</button>
+        <button className="tab">성장</button>
+        <button className="tab">사우동정</button>
       </div>
-      <div className="board_list">
-        <ul id="boardPostList">
-          <li><a href="#"><span className="txt_alim ">전사공지</span> <span className="txt_title" style={{width:'55%'}}><span style={{maxWidth:'85%', float:'left', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis'}}>[인사] 신규 입사자를 소개합니다 (영업2팀 이혜성)</span>&nbsp;&nbsp;<span style={{fontWeight:'bold'}}>[2]</span></span> <span className="txt_user">이유림</span> <span className="txt_date">2025-06-30</span> <span style={{width:'55px',display:'inline-block',verticalAlign:'middle',textAlign:'left',color:'#686868'}}><i className="fa fa-eye"></i> 35</span></a></li>
-          <li><a href="#"><span className="txt_alim ">전사공지</span> <span className="txt_title" style={{width:'55%'}}><span style={{maxWidth:'85%', float:'left', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis'}}>[인사] 신규 입사자를 소개합니다 (영업2팀 김성관)</span>&nbsp;&nbsp;<span style={{fontWeight:'bold'}}>[1]</span></span> <span className="txt_user">이유림</span> <span className="txt_date">2025-06-30</span> <span style={{width:'55px',display:'inline-block',verticalAlign:'middle',textAlign:'left',color:'#686868'}}><i className="fa fa-eye"></i> 31</span></a></li>
-        </ul>
-      </div>
-      <div id="paging" className="board_paging"><span className="paging_num"><strong>1</strong>/321</span><ul className="util_btn"><li className="btn_prev" style={{opacity:0.3}}></li><li className="btn_next no_br_r" style={{opacity:1}}></li></ul></div>
+      <table className="board_table">
+        <thead>
+          <tr>
+            <th>분류</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>일자</th>
+            <th>조회</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>전사공지</td>
+            <td>[인사] 신규 입사자를 소개합니다 (영업2팀 이혜성) [2]</td>
+            <td>이유림</td>
+            <td>2025-06-30</td>
+            <td>35</td>
+          </tr>
+          <tr>
+            <td>전사공지</td>
+            <td>[인사] 신규 입사자를 소개합니다 (영업2팀 김성관) [1]</td>
+            <td>이유림</td>
+            <td>2025-06-30</td>
+            <td>31</td>
+          </tr>
+        </tbody>
+      </table>
+      <div className="board_paging"><span className="paging_num"><strong>1</strong>/321</span></div>
     </div>
   );
 }

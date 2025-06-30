@@ -36,51 +36,21 @@ function UserBox() {
     <div className="box_user">
       <div className="date_info">
         <span className="visually-hidden">오늘 날짜</span>
-        <span className="date">2025.06.27 FRI</span>
-        <span id="js_clock" className="clock" aria-live="polite">{clock}</span>
+        <span className="date">2025.06.30 MON 12:50:10 PM</span>
       </div>
       <div className="user_info">
-        <div className="btn_clock">
-          <button
-            type="button"
-            className={`btn_attend${isClockedIn ? ' on' : ''}`}
-            aria-pressed={isClockedIn}
-            aria-label={isClockedIn ? '퇴근' : '출근'}
-            onClick={() => setIsClockedIn(v => !v)}
-          >
-            <span className="visually-hidden">{isClockedIn ? '퇴근' : '출근'} 버튼</span>
-            {isClockedIn ? '퇴근' : '출근'}
-          </button>
-        </div>
         <div className="photo_area">
-          <div className="photo_circle_section">
-            {/* 프로필 이미지 없을 때 */}
-            <a href="#" className="edit_circle" title="사진변경" tabIndex={0} aria-label="사진 변경">edit</a>
-          </div>
+          <img src="/images/cloudporte/profile.png" alt="프로필" className="profile_img" />
           <div className="user_txt">
-            <div className="user_txt_area">
-              <p className="user_name">최성식</p>
-              <p className="user_position">프로</p>
-              <p className="user_position">채널계서비스파트</p>
-            </div>
+            <span className="user_name">최성식</span>
+            <span className="user_position">프로</span>
+            <span className="user_team">채널계서비스파트</span>
           </div>
         </div>
-        <div className="link_area">
-          <ul id="divMyBookmark">
-            <li>
-              <a href="#" className="mail_link" data-tooltip-text="읽지않은 메일">
-                메일<strong id="mailCnt">{mailCnt}</strong>
-              </a>
-            </li>
-            <li>
-              <span style={{ color: '#505050', fontSize: 13, display: 'block' }}>
-                <a href="#" style={{ display: 'inline' }}>전자결재</a>
-                <a href="#" style={{ display: 'inline' }}><strong id="notyCnt" data-tooltip-text="통보">{notyCnt}</strong></a>
-                <a href="#" style={{ display: 'inline' }}><strong id="apprCnt" data-tooltip-text="미결">{apprCnt}&nbsp;/</strong></a>
-              </span>
-            </li>
-          </ul>
-        </div>
+        <ul className="user_status">
+          <li>메일 <span className="mail_count">0</span></li>
+          <li>전자결재 <span className="approval_count">0 / 0</span></li>
+        </ul>
       </div>
     </div>
   );

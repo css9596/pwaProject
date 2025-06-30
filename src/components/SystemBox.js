@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const systems = [
   { name: '전자전표', icon: 'https://lh3.googleusercontent.com/vTJcfynkAEr1z0T_mwvUBdDdxsCwmxqi8l8OsdrBf0hAD_t1YQZrtETVH_aaC-baKMKos7oQmZgZndE9I8ufIkXIHw' },
@@ -19,46 +19,18 @@ const systems = [
   { name: 'Cloud', icon: 'https://lh3.googleusercontent.com/-WA0QQksh_Bx3vkkjD_wbBwOgBltw8LxzFx5I0VvDkMlG-g5QYFWjXNw22z4S4xs9rkhM4AkkDke_ECFclnE4Y1Thr5ZTmGcB5oB_FOO' },
 ];
 
-const SYSTEMS_PER_PAGE = 6;
-
 function SystemBox() {
-  const [page, setPage] = useState(0);
-  const maxPage = Math.ceil(systems.length / SYSTEMS_PER_PAGE) - 1;
-  const startIdx = page * SYSTEMS_PER_PAGE;
-  const visibleSystems = systems.slice(startIdx, startIdx + SYSTEMS_PER_PAGE);
-
   return (
     <div className="box_system">
-      <div className="title_top">
-        <span className="title">우리 회사 시스템</span>
-        <ul className="util_btn">
-          <li>
-            <button type="button" className="btn_prev" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="이전" />
+      <div className="system_title">우리 회사 시스템</div>
+      <ul className="system_list">
+        {systems.map((sys, idx) => (
+          <li key={idx}>
+            <img src={sys.icon} alt={sys.name} />
+            <span>{sys.name}</span>
           </li>
-          <li>
-            <button type="button" className="btn_next" onClick={() => setPage(page + 1)} disabled={page === maxPage} aria-label="다음" />
-          </li>
-        </ul>
-        <span className="paging_num">
-          <strong>{page + 1}</strong> / {maxPage + 1}
-        </span>
-      </div>
-      <div className="swiper-container system-swiper">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide">
-            <ul className="system_list">
-              {visibleSystems.map((sys, idx) => (
-                <li key={idx} className="system_item">
-                  <span className="system_icon_area">
-                    <img src={sys.icon} alt={sys.name} className="system_icon" />
-                  </span>
-                  <div className="sys_title">{sys.name}</div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+        ))}
+      </ul>
     </div>
   );
 }
