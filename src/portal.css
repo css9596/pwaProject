@@ -6,14 +6,29 @@ body {
   color: #222;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
-
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: #f5f6fa;
+}
 .header, .head {
   background: #43bdae !important;
-  height: 50px;
+  height: 56px;
   width: 100%;
   border-bottom: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .logo img { height: 40px; }
 .gnb_list { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
@@ -87,11 +102,13 @@ body {
 .contents {
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 32px;
   width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 32px auto 0 auto;
+  padding: 0 24px 32px 24px;
   min-height: 600px;
+  box-sizing: border-box;
 }
 .layout_1, .layout_2, .layout_3 {
   display: flex;
@@ -101,21 +118,24 @@ body {
 .layout_1 {
   flex: 0 0 260px;
   min-width: 240px;
+  max-width: 280px;
 }
 .layout_2 {
   flex: 1 1 0;
-  min-width: 500px;
+  min-width: 480px;
+  max-width: 700px;
 }
 .layout_3 {
   flex: 0 0 320px;
   min-width: 280px;
+  max-width: 340px;
 }
 .box_user, .box_system, .box_calendarSchedule, .box_board, .box_search, .box_widget {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   margin-bottom: 0;
-  padding: 20px 18px;
+  padding: 22px 20px 20px 20px;
   border: 1px solid #e5e5e5;
 }
 
@@ -186,7 +206,16 @@ body {
 .box_widget .widget_content { text-align: center; }
 .widget_banner { width: 90%; border-radius: 8px; margin-bottom: 12px; }
 
-footer { background: #fff; border-top: 1px solid #e5e5e5; padding: 16px 0; text-align: center; }
+footer {
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  padding: 18px 0 16px 0;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  margin-top: 32px;
+  width: 100%;
+}
 .txt_copyright { color: #888; font-size: 13px; }
 .site_link { padding-left: 10px; font-weight: bold; }
 
