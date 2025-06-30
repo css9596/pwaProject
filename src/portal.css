@@ -319,4 +319,184 @@ div#loadingDiv{
 /* popup */
 .popup { display: inline-block; }
 
-/* 기타 필요한 스타일은 원본 CSS 파일 확보 시 추가 반영 필요 */
+/* 버튼 스타일 */
+.btn_search, .btn_more, .btn_prev, .btn_next, .btn_attend, .bt_logout {
+  display: inline-block;
+  background: #43bdae;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.btn_search:hover, .btn_more:hover, .btn_prev:hover, .btn_next:hover, .btn_attend:hover, .bt_logout:hover {
+  background: #2e8c7a;
+}
+.btn_more {
+  width: 24px;
+  height: 24px;
+  background: url('./images/cloudporte/icon_more.png') no-repeat center center #43bdae;
+  background-size: 16px 16px;
+  border-radius: 50%;
+  padding: 0;
+  margin-left: 8px;
+}
+.btn_prev, .btn_next {
+  width: 28px;
+  height: 28px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  border: 1px solid #d3d3d3;
+  margin: 0 2px;
+  position: relative;
+}
+.btn_prev:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #888;
+  border-bottom: 2px solid #888;
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  transform: rotate(45deg);
+}
+.btn_next:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #888;
+  border-bottom: 2px solid #888;
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  transform: rotate(-45deg);
+}
+
+/* 탭 스타일 */
+.tab_top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 0 8px;
+}
+.swiper-slide .on {
+  color: #222;
+  background: #fff;
+  border-bottom: 2px solid #43bdae;
+  font-weight: 700;
+}
+
+/* 셀렉트/입력창 */
+.styled_select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.search_select, .select_company {
+  height: 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 15px;
+  background: #fff;
+  color: #222;
+}
+.search_input {
+  width: 140px;
+  height: 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+/* 리스트/테이블/페이징 */
+.board_list ul, .calendar_list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.board_list ul li, .calendar_list ul li {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 15px;
+  color: #222;
+}
+.board_list ul li:last-child, .calendar_list ul li:last-child {
+  border-bottom: none;
+}
+.txt_alim {
+  color: #43bdae;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.txt_title {
+  flex: 1;
+  font-weight: 500;
+  color: #222;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.txt_user, .txt_date {
+  color: #888;
+  font-size: 13px;
+  margin-left: 8px;
+}
+.paging_num {
+  font-size: 14px;
+  color: #888;
+  margin-right: 8px;
+}
+.util_btn {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 위젯/배너/iframe */
+.box_widget .fr-fic {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.box_widget iframe {
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+/* 기타 UI 보정 */
+input, select, button, a {
+  outline: none;
+}
