@@ -26,7 +26,7 @@ function App() {
         <article className="layout_3">
           <SearchBox />
           <WidgetBox />
-          {/* 근태/출퇴근 등 우측 영역 추가 필요시 여기에 컴포넌트 삽입 */}
+          {/* 출퇴근/위젯 등 우측 영역 추가 필요시 이곳에 */}
         </article>
       </section>
       <Footer />
