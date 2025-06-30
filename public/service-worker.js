@@ -1,3 +1,10 @@
+const CACHE_NAME = 'pwa-cache-v1';
+const urlsToCache = [
+  '/',
+  '/index.html',
+  '/manifest.json',
+  // 필요시 추가
+];
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('v1').then((cache) => {
