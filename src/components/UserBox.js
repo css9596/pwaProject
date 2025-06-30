@@ -34,22 +34,26 @@ function UserBox() {
 
   return (
     <div className="box_user">
-      <div className="date_info">
+      <div className="date_info" style={{ marginBottom: 8 }}>
         <span className="visually-hidden">오늘 날짜</span>
-        <span className="date">2025.06.30 MON 12:50:10 PM</span>
+        <span className="date">
+          2025.06.30 MON{' '}
+          <span style={{ fontWeight: 700 }}>{clock}</span>
+        </span>
       </div>
       <div className="user_info">
-        <div className="photo_area">
-          <img src="/images/cloudporte/profile.png" alt="프로필" className="profile_img" />
-          <div className="user_txt">
-            <span className="user_name">최성식</span>
-            <span className="user_position">프로</span>
-            <span className="user_team">채널계서비스파트</span>
-          </div>
+        <div className="user_txt">
+          <span className="user_name">최성식</span>
+          <span className="user_position">프로</span>
+          <span className="user_team">채널계서비스파트</span>
         </div>
         <ul className="user_status">
-          <li>메일 <span className="mail_count">0</span></li>
-          <li>전자결재 <span className="approval_count">0 / 0</span></li>
+          <li>
+            메일 <span className="mail_count">0</span>
+          </li>
+          <li>
+            전자결재 <span className="approval_count">0 / 0</span>
+          </li>
         </ul>
       </div>
     </div>

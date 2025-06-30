@@ -36,13 +36,13 @@ function SystemBox() {
           <span className="paging_num" style={{marginLeft:8}}><strong>{page + 1}</strong> / {maxPage + 1}</span>
         </div>
       </div>
-      <ul className="system_list">
+      <ul className="system_list" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'8px 0',padding:'0 2px',minHeight:220}}>
         {visibleSystems.map((sys, idx) => (
-          <li key={idx} className="system_item" style={{display:'flex',alignItems:'center',gap:10}}>
-            <span className="system_icon_area" style={{width:48,height:48,display:'flex',alignItems:'center',justifyContent:'center',marginRight:12}}>
+          <li key={idx} className="system_item" style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'flex-start',height:100,padding:'8px 0'}}>
+            <span className="system_icon_area" style={{width:48,height:48,display:'flex',alignItems:'center',justifyContent:'center',marginBottom:6}}>
               <img src={sys.icon} alt={sys.name} className="system_icon" style={{width:48,height:48,objectFit:'contain'}} />
             </span>
-            <div className="sys_title">{sys.name}</div>
+            <div className="sys_title" style={{fontSize:15,fontWeight:500,color:'#222',textAlign:'center',marginTop:2,wordBreak:'keep-all',lineHeight:'1.2'}}>{sys.name}</div>
           </li>
         ))}
       </ul>
