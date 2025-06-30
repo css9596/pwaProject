@@ -84,12 +84,39 @@ body {
 .log_out .bt_logout:hover { background: #f17b18; }
 .log_list ul li a:hover, .log_list ul li a:hover .log_email { color: #eb6a01; }
 
+.contents {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 600px;
+}
+.layout_1, .layout_2, .layout_3 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.layout_1 {
+  flex: 0 0 260px;
+  min-width: 240px;
+}
+.layout_2 {
+  flex: 1 1 0;
+  min-width: 500px;
+}
+.layout_3 {
+  flex: 0 0 320px;
+  min-width: 280px;
+}
 .box_user, .box_system, .box_calendarSchedule, .box_board, .box_search, .box_widget {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  margin-bottom: 24px;
-  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 0;
+  padding: 20px 18px;
+  border: 1px solid #e5e5e5;
 }
 
 .title_top { font-size: 18px; font-weight: bold; margin-bottom: 16px; display: flex; align-items: center; }
@@ -116,10 +143,34 @@ body {
 .approval_area { display: flex; gap: 4px; align-items: center; }
 .approval_link { color: #222; text-decoration: none; font-size: 14px; }
 
-.box_system .system_list { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-.system_item { text-align: center; width: 90px; }
-.system_icon { width: 48px; height: 48px; border-radius: 8px; background: #f5f5f5; }
-.sys_title { margin-top: 8px; font-size: 13px; color: #333; }
+.box_system .system_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 0;
+  justify-content: space-between;
+}
+.system_item {
+  width: 50%;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.system_icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e5e5;
+}
+.system_icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
 
 .box_calendarSchedule .calendar_list ul, .box_board .board_list ul { list-style: none; margin: 0; padding: 0; }
 .txt_date { color: #f17b18; font-weight: bold; margin-right: 8px; }
