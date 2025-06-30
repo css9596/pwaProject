@@ -11,22 +11,33 @@ function WidgetBox() {
   return (
     <div className="box_widget">
       {widgetButtons.map((btn, idx) => (
-        <button className="widget_button" key={idx} style={{display:'flex',alignItems:'center',justifyContent:'center',padding:'10px 0',height:48}}>
-          <img src={btn.icon} alt="" style={{width:36,height:36}} />
+        <button
+          className="widget_button"
+          key={idx}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 0,
+            height: 48,
+            width: 48,
+            minWidth: 48,
+            minHeight: 48,
+            borderRadius: 12
+          }}
+        >
+          <img
+            src={btn.icon}
+            alt=""
+            style={{
+              width: 32,
+              height: 32,
+              objectFit: 'contain',
+              display: 'block'
+            }}
+          />
         </button>
       ))}
-      <div className="widget_attendance">
-        <div className="attendance_title">근태현황</div>
-        <div className="attendance_date">2025.06.30</div>
-        <ul className="attendance_list">
-          <li>강준구 프로 훈련(14:00~18:00)</li>
-          <li>차혜정 프로 연차(17:00~18:00)</li>
-        </ul>
-        <div className="attendance_btns">
-          <button className="btn_attend">출근</button>
-          <button className="btn_leave">퇴근</button>
-        </div>
-      </div>
     </div>
   );
 }
