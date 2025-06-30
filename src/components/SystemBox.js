@@ -33,29 +33,30 @@ function SystemBox() {
         <span className="title">우리 회사 시스템</span>
         <ul className="util_btn">
           <li>
-            <button className="btn_prev" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="이전" />
+            <button type="button" className="btn_prev" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="이전" />
           </li>
           <li>
-            <button className="btn_next" onClick={() => setPage(page + 1)} disabled={page === maxPage} aria-label="다음" />
+            <button type="button" className="btn_next" onClick={() => setPage(page + 1)} disabled={page === maxPage} aria-label="다음" />
           </li>
         </ul>
         <span className="paging_num">
           <strong>{page + 1}</strong> / {maxPage + 1}
         </span>
       </div>
-      <div className="swiper-container">
-        <div className="swiper-slide">
-          <ul className="system_list">
-            {visibleSystems.map((sys, idx) => (
-              <li key={idx} className="system_item">
-                <span className="system_icon_area">
-                  <img src={sys.icon} alt={sys.name} className="system_icon" />
-                  {/* badge, 알림 등 동적 영역 필요시 여기에 */}
-                </span>
-                <div className="sys_title">{sys.name}</div>
-              </li>
-            ))}
-          </ul>
+      <div className="swiper-container system-swiper">
+        <div className="swiper-wrapper">
+          <div className="swiper-slide">
+            <ul className="system_list">
+              {visibleSystems.map((sys, idx) => (
+                <li key={idx} className="system_item">
+                  <span className="system_icon_area">
+                    <img src={sys.icon} alt={sys.name} className="system_icon" />
+                  </span>
+                  <div className="sys_title">{sys.name}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

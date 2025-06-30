@@ -25,9 +25,9 @@ function UserBox() {
     return () => clearInterval(timer);
   }, []);
 
-  // 출퇴근 버튼 상태(샘플)
+  // 출퇴근 버튼 상태
   const [isClockedIn, setIsClockedIn] = useState(false);
-  // 샘플 카운트 데이터
+  // 카운트 데이터
   const [mailCnt] = useState(0);
   const [notyCnt] = useState(0);
   const [apprCnt] = useState(0);
@@ -36,7 +36,8 @@ function UserBox() {
     <div className="box_user">
       <div className="date_info">
         <span className="visually-hidden">오늘 날짜</span>
-        2025.06.27 FRI <span id="js_clock" aria-live="polite">{clock}</span>
+        <span className="date">2025.06.27 FRI</span>
+        <span id="js_clock" className="clock" aria-live="polite">{clock}</span>
       </div>
       <div className="user_info">
         <div className="btn_clock">
@@ -44,6 +45,7 @@ function UserBox() {
             type="button"
             className={`btn_attend${isClockedIn ? ' on' : ''}`}
             aria-pressed={isClockedIn}
+            aria-label={isClockedIn ? '퇴근' : '출근'}
             onClick={() => setIsClockedIn(v => !v)}
           >
             <span className="visually-hidden">{isClockedIn ? '퇴근' : '출근'} 버튼</span>
@@ -52,7 +54,7 @@ function UserBox() {
         </div>
         <div className="photo_area">
           <div className="photo_circle_section">
-            {/* 프로필 이미지 없음 */}
+            {/* 프로필 이미지 없을 때 */}
             <a href="#" className="edit_circle" title="사진변경" tabIndex={0} aria-label="사진 변경">edit</a>
           </div>
           <div className="user_txt">
@@ -66,8 +68,8 @@ function UserBox() {
         <div className="link_area">
           <ul id="divMyBookmark">
             <li>
-              <a href="#">
-                메일<strong id="mailCnt" data-tooltip-text="읽지않은 메일">{mailCnt}</strong>
+              <a href="#" className="mail_link" data-tooltip-text="읽지않은 메일">
+                메일<strong id="mailCnt">{mailCnt}</strong>
               </a>
             </li>
             <li>
