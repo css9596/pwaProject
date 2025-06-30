@@ -163,14 +163,14 @@ body {
   padding: 22px 20px 20px 20px;
   border: 1px solid #e5e5e5;
 }
-.box_system .system_list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 0;
-  justify-content: space-between;
-}
-.system_item {
-  width: 50%;
+.box_user {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e5e5e5;
+  padding: 18px 18px 12px 18px;
+  margin-bottom: 0;
+  min-height: 120
   margin-bottom: 12px;
   display: flex;
   align-items: center;

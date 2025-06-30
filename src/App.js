@@ -1,8 +1,4 @@
-import React, { useEffect } from 'react';
-import 'swiper/css';
-import $ from 'jquery';
-import './portal.css';
-import './style.css';
+import React from 'react';
 import Header from './components/Header';
 import UserBox from './components/UserBox';
 import SystemBox from './components/SystemBox';
@@ -11,14 +7,10 @@ import BoardBox from './components/BoardBox';
 import SearchBox from './components/SearchBox';
 import WidgetBox from './components/WidgetBox';
 import Footer from './components/Footer';
+import './portal.css';
+import './style.css';
 
 function App() {
-  // body에 스킨 클래스 적용 (예: skin-6 = 오렌지)
-  useEffect(() => {
-    document.body.classList.add('skin-6');
-    return () => document.body.classList.remove('skin-6');
-  }, []);
-
   return (
     <div className="App">
       <Header />
@@ -34,6 +26,7 @@ function App() {
         <article className="layout_3">
           <SearchBox />
           <WidgetBox />
+          {/* 근태/출퇴근 등 우측 영역 추가 필요시 여기에 컴포넌트 삽입 */}
         </article>
       </section>
       <Footer />
