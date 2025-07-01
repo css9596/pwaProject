@@ -9,7 +9,17 @@ const widgetButtons = [
 
 function WidgetBox() {
   return (
-    <div className="box_widget">
+    <div
+      className="box_widget"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 24,
+        justifyContent: 'center',
+        height: '100%'
+      }}
+    >
       {widgetButtons.map((btn, idx) => (
         <button
           className="widget_button"
@@ -18,22 +28,26 @@ function WidgetBox() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 0,
-            height: 48,
-            width: 48,
-            minWidth: 48,
-            minHeight: 48,
-            borderRadius: 12
+            width: '100%',
+            height: '100px',
+            minHeight: '80px',
+            borderRadius: 16,
+            background: 'none',
+            border: 'none',
+            boxShadow: 'none',
+            padding: 0
           }}
         >
           <img
             src={btn.icon}
             alt=""
             style={{
-              width: 32,
-              height: 32,
+              width: '72px',
+              height: '72px',
               objectFit: 'contain',
-              display: 'block'
+              display: 'block',
+              maxWidth: '100%',
+              maxHeight: '100%'
             }}
           />
         </button>
