@@ -77,8 +77,11 @@ body {
   background-image: url(./images/cloudporte/icon_help.png) !important;
   margin-right: 11px;
 }
-.util ul li.btn_logout a {
+.util ul li.btn_logout a,
+.util ul li.btn_logout a.on,
+.util ul li.btn_logout a:hover {
   background-image: url(./images/cloudporte/icon_log.png) !important;
+  background-position: 0 0 !important; /* 항상 첫 번째(왼쪽) 아이콘만 보이게 */
 }
 .util ul li.btn_logout a.on {
   background-position: 0 -30px !important;
