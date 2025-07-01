@@ -15,7 +15,7 @@ function WidgetBox() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 24,
+        gap: 10, // gap을 10px로 줄임
         justifyContent: 'center',
         height: '100%'
       }}

@@ -30,9 +30,37 @@ function SystemBox() {
     <div className="box_system">
       <div className="title_top" style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:8}}>
         <span className="title">우리 회사 시스템</span>
-        <div style={{display:'flex',alignItems:'center',gap:4}}>
-          <button type="button" className="btn_prev" onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="이전" />
-          <button type="button" className="btn_next" onClick={() => setPage(page + 1)} disabled={page === maxPage} aria-label="다음" />
+        <div style={{display:'flex',alignItems:'center',gap:8}}>
+          <button
+            type="button"
+            className="btn_prev"
+            style={{
+              width: 36,
+              height: 36,
+              minWidth: 36,
+              minHeight: 36,
+              borderRadius: '50%',
+              fontSize: 20
+            }}
+            onClick={() => setPage(page - 1)}
+            disabled={page === 0}
+            aria-label="이전"
+          />
+          <button
+            type="button"
+            className="btn_next"
+            style={{
+              width: 36,
+              height: 36,
+              minWidth: 36,
+              minHeight: 36,
+              borderRadius: '50%',
+              fontSize: 20
+            }}
+            onClick={() => setPage(page + 1)}
+            disabled={page === maxPage}
+            aria-label="다음"
+          />
           <span className="paging_num" style={{marginLeft:8}}><strong>{page + 1}</strong> / {maxPage + 1}</span>
         </div>
       </div>
