@@ -7,23 +7,25 @@ function SearchBox() {
       style={{
         display: 'flex',
         alignItems: 'center',
-        gap: 10,
-        padding: '16px 14px',
+        gap: 8,
+        padding: '12px 10px',
         background: '#fff',
         borderRadius: 12,
         boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
         border: '1px solid #e5e5e5',
         marginBottom: 16,
-        minHeight: 56,
-        boxSizing: 'border-box'
+        minHeight: 48,
+        boxSizing: 'border-box',
+        width: '100%',
+        maxWidth: 360
       }}
     >
       <select
         className="search_select"
         style={{
-          flex: '0 0 110px',
-          maxWidth: 120,
-          height: 36,
+          flex: '0 0 90px',
+          maxWidth: 100,
+          height: 32,
           fontSize: 15,
           borderRadius: 6
         }}
@@ -36,10 +38,10 @@ function SearchBox() {
         placeholder="직원 조회"
         aria-label="직원 검색"
         style={{
-          flex: '1 1 140px',
-          maxWidth: 180,
-          minWidth: 100,
-          height: 36,
+          flex: '1 1 100px',
+          maxWidth: 120,
+          minWidth: 60,
+          height: 32,
           fontSize: 15,
           borderRadius: 6
         }}
@@ -47,16 +49,17 @@ function SearchBox() {
       <button
         className="btn_search"
         style={{
-          flex: '0 0 80px',
-          minWidth: 70,
-          height: 38,
+          flex: '0 0 60px',
+          minWidth: 60,
+          height: 34,
           fontSize: 15,
           marginLeft: 0,
           borderRadius: 8,
           boxSizing: 'border-box',
           whiteSpace: 'nowrap',
           overflow: 'hidden',
-          textOverflow: 'ellipsis'
+          textOverflow: 'ellipsis',
+          padding: 0
         }}
       >
         직원 조회
