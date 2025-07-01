@@ -1,17 +1,16 @@
 const CACHE_NAME = 'pwa-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  // 필요시 추가
+  process.env.PUBLIC_URL + '/',
+  process.env.PUBLIC_URL + '/index.html',
+  process.env.PUBLIC_URL + '/manifest.json',
 ];
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('v1').then((cache) => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/manifest.json',
+                process.env.PUBLIC_URL + '/',
+                process.env.PUBLIC_URL + '/index.html',
+                process.env.PUBLIC_URL + '/manifest.json',
                 // 추가적인 리소스가 필요할 경우 여기에 추가
             ]);
         })
