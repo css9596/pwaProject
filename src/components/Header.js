@@ -24,7 +24,7 @@ function Header() {
         <div className="util">
           <ul>
             <li className="btn_help"><a href="javascript:;"></a></li>
-            <li className="btn_logout"><a href="javascript:;" id="aBtnLogout"></a></li>
+            <li className=""><a href="javascript:;" id="aBtnLogout"></a></li>
           </ul>
         </div>
         <div className="log_out" id="divLogout" style={{ display: 'none' }}>
