@@ -30,11 +30,15 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
-    static: path.join(__dirname, 'public'),
-    compress: true,
-    port: 3000,
-    historyApiFallback: true,
-  },
+     static: {
+       // directory: path.join(__dirname, 'dist')
+       directory: path.join(__dirname, 'public')
+     },
+     compress: true,
+     port: 8080,
+     hot: true,
+     open: true
+   },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
